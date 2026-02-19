@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
         
         <div className="bg-white/95 opacity-70 backdrop-blur shadow-2xl rounded-2xl p-8 md:p-12 transition-all hover:scale-[1.02]">
           <Countdown />
-          <div className="min-h-screen selection:bg-pink-100 selection:text-blue-900 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
             <a href="#story" className="w-full sm:w-auto px-8 py-3 bg-blue-700 text-white rounded-full text-sm font-semibold tracking-widest hover:bg-blue-600 transition-all shadow-lg">
               OUR STORY
             </a>
