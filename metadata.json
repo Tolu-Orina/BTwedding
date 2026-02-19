@@ -1,0 +1,7 @@
+{
+  "name": "Blessyn & Tolu Wedding Website",
+  "description": "An elegant, production-ready wedding website for Blessyn and Tolu, featuring their love story, logistics, and a secure RSVP system.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
