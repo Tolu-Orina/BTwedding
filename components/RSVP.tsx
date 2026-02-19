@@ -18,7 +18,7 @@ const RSVP: React.FC = () => {
   const handleAuth = (e: React.FormEvent) => {
     e.preventDefault();
     // Simple mock validation
-    if (inviteCode.toUpperCase().startsWith('BLT-')) {
+    if (inviteCode.toUpperCase().startsWith('')) {
       setError('');
       setStep('form');
     } else {
@@ -26,13 +26,37 @@ const RSVP: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStep('success');
+    
+    try {
+      const response = await fetch('https://m5de2ayxhjzoyfxob7t3xbxlza0zwtjl.lambda-url.us-east-1.on.aws/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+        },
+        body: JSON.stringify({
+          name: inviteCode,
+          attending: attending,
+          guestCount: guestCount,
+          events: events,
+          choice: attending ? 'JOYFULLY ATTEND' : 'REGRETFULLY DECLINE'
+        })
+      });
+
+      if (response.ok) {
+        setStep('success');
+      } else {
+        setError('Failed to submit RSVP. Please try again.');
+      }
+    } catch (error) {
+      setError('Network error. Please try again.');
+    }
   };
 
   return (
-    <section id="rsvp" className="py-24 bg-blue-50/50">
+    <section id="rsvp" className="py-24 bg-pink-50">
       <div className="max-w-2xl mx-auto px-6">
         <div className="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-blue-100">
           <div className="bg-blue-700 py-10 px-6 text-center text-white">
@@ -54,7 +78,7 @@ const RSVP: React.FC = () => {
                     type="text" 
                     value={inviteCode}
                     onChange={(e) => setInviteCode(e.target.value)}
-                    placeholder="e.g. BLT-1045"
+                    placeholder="e.g. FUNKE ONYEMA ALIU"
                     className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-xl focus:ring-2 focus:ring-blue-200 outline-none transition-all uppercase tracking-widest text-center text-lg"
                     required
                   />
@@ -149,9 +173,6 @@ const RSVP: React.FC = () => {
                 <p className="text-gray-600 leading-relaxed max-w-sm mx-auto">
                   "We are honored to celebrate this beautiful moment with you. Thank you for being part of our story."
                 </p>
-                <div className="pt-6">
-                  <button onClick={() => setStep('auth')} className="text-blue-700 font-bold tracking-widest text-xs uppercase hover:underline">Edit RSVP</button>
-                </div>
               </div>
             )}
           </div>

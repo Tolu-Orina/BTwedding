@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 const Details: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   return (
-    <section id="details" className="py-24 bg-white">
+    <section id="details" className="py-24 bg-pink-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif text-blue-700 mb-4">The Celebration</h2>
@@ -13,7 +13,7 @@ const Details: React.FC = () => {
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Traditional Wedding */}
-          <div className="group bg-blue-50/50 rounded-[2rem] p-10 border border-blue-100 transition-all hover:shadow-xl hover:-translate-y-1">
+          <div className="bg-pink-50/50 rounded-[2.5rem] p-10 border border-pink-100 transition-all hover:shadow-xl hover:-translate-y-1">
             <div className="flex justify-between items-start mb-8">
               <div>
                 <span className="text-blue-700 font-bold tracking-widest text-xs uppercase bg-blue-100 px-3 py-1 rounded-full">Day One</span>
@@ -49,14 +49,14 @@ const Details: React.FC = () => {
 
             <button 
               onClick={() => setShowModal(true)}
-              className="mt-10 w-full py-4 hover:bg-white border border-blue-200 rounded-xl hover:text-blue-700 font-medium bg-blue-700 text-white transition-all"
+              className="mt-10 w-full py-4 hover:bg-pink-50 border border-pink-200 rounded-xl hover:text-blue-700 font-medium bg-blue-700 text-white transition-all"
             >
               GET DIRECTIONS
             </button>
           </div>
 
           {/* White Wedding */}
-          <div className="group bg-blue-50/50 rounded-[2rem] p-10 border border-blue-100 transition-all hover:shadow-xl hover:-translate-y-1">
+          <div className="bg-pink-50/50 rounded-[2.5rem] p-10 border border-pink-100 transition-all hover:shadow-xl hover:-translate-y-1">
              <div className="flex justify-between items-start mb-8">
               <div>
                 <span className="text-blue-700 font-bold tracking-widest text-xs uppercase bg-blue-100 px-3 py-1 rounded-full">Day Two</span>

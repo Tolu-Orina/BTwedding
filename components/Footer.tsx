@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="py-20 bg-blue-50/20 border-t border-blue-100">
+    <footer className="py-20 bg-pink-50/20 border-t border-pink-100">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <h2 className="text-4xl font-serif text-blue-700 mb-8 tracking-tighter">Blessyn <span className="italic font-normal">&</span> Tolu</h2>
         
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
 
         <p className="text-gray-400 text-xs italic">
           Designed with love for our family and friends.<br />
-          See you on the big day!
+          See you on our big day!
         </p>
       </div>
     </footer>

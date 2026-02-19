@@ -10,7 +10,7 @@ const Gallery: React.FC = () => {
     : GALLERY_ITEMS.filter(item => item.category === filter);
 
   return (
-    <section id="gallery" className="py-24 bg-blue-50/20">
+    <section id="gallery" className="py-24 bg-pink-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-serif text-blue-700 mb-6">Gallery</h2>

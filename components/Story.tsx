@@ -3,7 +3,7 @@ import React from 'react';
 
 const Story: React.FC = () => {
   return (
-    <section id="story" className="py-24 bg-blue-50/30">
+    <section id="story" className="py-24 bg-pink-50">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif text-blue-700 mb-4">Our Journey</h2>

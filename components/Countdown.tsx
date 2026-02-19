@@ -32,7 +32,7 @@ const Countdown: React.FC = () => {
     <div className="flex space-x-4 md:space-x-8 justify-center">
       {Object.entries(timeLeft).map(([unit, value]) => (
         <div key={unit} className="flex flex-col items-center">
-          <div className="text-3xl md:text-5xl font-serif text-rose-900">{value.toString().padStart(2, '0')}</div>
+          <div className="text-3xl md:text-5xl font-serif font-bold text-blue-700">{value.toString().padStart(2, '0')}</div>
           <div className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-400 mt-2">{unit}</div>
         </div>
       ))}

@@ -7,7 +7,7 @@ const WeddingParty: React.FC = () => {
   const groomsmen = WEDDING_PARTY.filter(m => m.role === 'Groomsman');
 
   return (
-    <section id="party" className="py-24 bg-white">
+    <section id="party" className="py-24 bg-pink-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif text-blue-700 mb-4">Wedding Party</h2>

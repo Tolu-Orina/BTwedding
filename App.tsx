@@ -48,8 +48,8 @@ const App: React.FC = () => {
 
       {/* Background decoration elements */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-[-1] opacity-40 overflow-hidden">
-        <div className="absolute top-[10%] left-[-5%] w-[40%] aspect-square bg-rose-50 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-[20%] right-[-10%] w-[50%] aspect-square bg-rose-50 rounded-full blur-[150px]"></div>
+        <div className="absolute top-[10%] left-[-5%] w-[40%] aspect-square bg-pink-50 rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-[20%] right-[-10%] w-[50%] aspect-square bg-pink-50 rounded-full blur-[150px]"></div>
       </div>
     </div>
   );
