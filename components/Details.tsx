@@ -13,7 +13,7 @@ const Details: React.FC = () => {
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Traditional Wedding */}
-          <div className="bg-pink-50/50 rounded-[2.5rem] p-10 border border-pink-100 transition-all hover:shadow-xl hover:-translate-y-1">
+          <div className="bg-pink-200/50 rounded-[2.5rem] p-10 border border-pink-100 transition-all hover:shadow-xl hover:-translate-y-1">
             <div className="flex justify-between items-start mb-8">
               <div>
                 <span className="text-blue-700 font-bold tracking-widest text-xs uppercase bg-blue-100 px-3 py-1 rounded-full">Day One</span>
@@ -56,7 +56,7 @@ const Details: React.FC = () => {
           </div>
 
           {/* White Wedding */}
-          <div className="bg-pink-50/50 rounded-[2.5rem] p-10 border border-pink-100 transition-all hover:shadow-xl hover:-translate-y-1">
+          <div className="bg-pink-200/50 rounded-[2.5rem] p-10 border border-pink-100 transition-all hover:shadow-xl hover:-translate-y-1">
              <div className="flex justify-between items-start mb-8">
               <div>
                 <span className="text-blue-700 font-bold tracking-widest text-xs uppercase bg-blue-100 px-3 py-1 rounded-full">Day Two</span>
