@@ -1,14 +1,13 @@
-
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Story from './components/Story';
-import Details from './components/Details';
-import Gallery from './components/Gallery';
-// import WeddingParty from './components/WeddingParty';
-import RSVP from './components/RSVP';
-import FAQ from './components/FAQ';
-import Footer from './components/Footer';
+
+const Story = lazy(() => import('./components/Story'));
+const Details = lazy(() => import('./components/Details'));
+const Gallery = lazy(() => import('./components/Gallery'));
+const RSVP = lazy(() => import('./components/RSVP'));
+const FAQ = lazy(() => import('./components/FAQ'));
+const Footer = lazy(() => import('./components/Footer'));
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -36,15 +35,18 @@ const App: React.FC = () => {
       
       <main>
         <Hero />
-        <Story />
-        <Details />
-        <Gallery />
-        {/* <WeddingParty /> */}
-        <RSVP />
-        <FAQ />
+        <Suspense fallback={<div className="min-h-[200px]" aria-busy="true" />}>
+          <Story />
+          <Details />
+          <Gallery />
+          <RSVP />
+          <FAQ />
+        </Suspense>
       </main>
 
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
 
       {/* Background decoration elements */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-[-1] opacity-40 overflow-hidden">

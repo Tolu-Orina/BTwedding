@@ -32,7 +32,9 @@ const Gallery: React.FC = () => {
             <div key={item.id} className="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-gray-100 cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500">
               <img 
                 src={item.url} 
-                alt={item.category} 
+                alt={item.category}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
               />
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">

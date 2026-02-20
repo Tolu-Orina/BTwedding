@@ -21,7 +21,7 @@ const Story: React.FC = () => {
             {/* Mobile: full-width image above text. Desktop: float right, larger images, rounded shape for text wrap */}
             <div className="md:float-right w-full md:w-[min(45%,380px)] lg:w-[min(42%,420px)] md:ml-6 lg:ml-8 md:mb-6 shrink-0 rounded-2xl overflow-hidden md:[shape-outside:inset(0_0_0_0_round_1rem)] md:[shape-margin:1.25rem]">
               <div className="aspect-[4/5] max-h-[380px] sm:max-h-[420px] md:max-h-none rounded-2xl overflow-hidden shadow-xl border-4 border-white/90 relative">
-                <img src="/bride.jpeg" alt="Blessyn" className="w-full h-full object-cover" />
+                <img src="/bride.jpeg" alt="Blessyn" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 <div className="absolute bottom-4 right-4 bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-blue-700 text-xs tracking-widest font-bold shadow-sm">THE BRIDE</div>
               </div>
             </div>
@@ -59,7 +59,7 @@ const Story: React.FC = () => {
             {/* Mobile: full-width image above text. Desktop: float left, larger images, rounded shape for text wrap */}
             <div className="md:float-left w-full md:w-[min(45%,380px)] lg:w-[min(42%,420px)] md:mr-6 lg:mr-8 md:mb-6 shrink-0 rounded-2xl overflow-hidden md:[shape-outside:inset(0_0_0_0_round_1rem)] md:[shape-margin:1.25rem]">
               <div className="aspect-[4/5] max-h-[380px] sm:max-h-[420px] md:max-h-none rounded-2xl overflow-hidden shadow-xl border-4 border-white/90 relative">
-                <img src="/groom.jpeg" alt="Tolu" className="w-full h-full object-cover" />
+                <img src="/groom.jpeg" alt="Tolu" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-blue-700 text-xs tracking-widest font-bold shadow-sm">THE GROOM</div>
               </div>
             </div>

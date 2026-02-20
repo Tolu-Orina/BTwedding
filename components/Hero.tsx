@@ -5,14 +5,18 @@ import Countdown from './Countdown';
 const Hero: React.FC = () => {
   return (
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image - Using a vibe similar to the Engagement Shoot Full Body Front */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-[10000ms] hover:scale-110"
-        // style={{ backgroundImage: `url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1920&auto=format&fit=crop')` }}
-        style={{ backgroundImage: 'url("BT.jpeg")' }}
-      >
-        <div className="absolute inset-0 bg-black/45"></div>
-      </div>
+      {/* LCP-optimized: img + fetchPriority (not background-image). Compress BT.jpeg to under 500KB for fast LCP */}
+      <img
+        src="/BT.jpeg"
+        alt="Blessyn and Tolu - Wedding"
+        fetchPriority="high"
+        loading="eager"
+        decoding="async"
+        width={1920}
+        height={1080}
+        className="absolute inset-0 z-0 w-full h-full object-cover object-center transition-transform duration-[10000ms] hover:scale-110"
+      />
+      <div className="absolute inset-0 z-0 bg-black/45" aria-hidden="true" />
 
       <div className="relative z-2 text-center px-4 max-w-4xl ">
         <h2 className="text-white text-sm md:text-lg uppercase tracking-[0.3em] mb-6 animate-pulse">

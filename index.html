@@ -4,22 +4,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
+  <!-- Preload LCP image first (critical for Core Web Vitals) -->
+  <link rel="preload" href="/BT.jpeg" as="image">
+
   <!-- SEO Meta Tags -->
   <title>Blessyn & Tolu Wedding | #BeautifulinhisTime | April 10-11, 2026 | Lagos, Nigeria</title>
   <meta name="description" content="Join Blessyn and Tolu as they celebrate their wedding on April 10-11, 2026 in Lagos, Nigeria. Two days of traditional and white wedding ceremonies. #TolusBlessyn26">
   <meta name="keywords" content="Blessyn Tolu wedding, Lagos Nigeria wedding, traditional wedding, white wedding, April 2026 wedding, #BeautifulinhisTime, #TolusBlessyn26">
   <meta name="author" content="Blessyn & Tolu">
   <meta name="robots" content="index, follow">
+  <meta name="geo.region" content="NG-LA">
+  <meta name="theme-color" content="#1d4ed8">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://blessyn-tolu-wedding.com">
   <meta property="og:title" content="Blessyn & Tolu Wedding | Beautiful In His Time">
   <meta property="og:description" content="Join us as we celebrate our wedding on April 10-11, 2026 in Lagos, Nigeria. #BeautifulinhisTime #TolusBlessyn26">
-  <meta property="og:image" content="/BT.jpeg">
+  <meta property="og:image" content="https://blessyn-tolu-wedding.com/BT.jpeg">
+  <meta property="og:image:secure_url" content="https://blessyn-tolu-wedding.com/BT.jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Blessyn and Tolu Wedding - #BeautifulinhisTime">
+  <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Blessyn & Tolu Wedding">
   
   <!-- Twitter -->
@@ -27,37 +35,138 @@
   <meta property="twitter:url" content="https://blessyn-tolu-wedding.com">
   <meta property="twitter:title" content="Blessyn & Tolu Wedding | Beautiful In His Time">
   <meta property="twitter:description" content="Join us as we celebrate our wedding on April 10-11, 2026 in Lagos, Nigeria. #BeautifulinhisTime #TolusBlessyn26">
-  <meta property="twitter:image" content="/BT.jpeg">
+  <meta property="twitter:image" content="https://blessyn-tolu-wedding.com/BT.jpeg">
+  <meta property="twitter:image:alt" content="Blessyn and Tolu Wedding - #BeautifulinhisTime">
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://blessyn-tolu-wedding.com">
-  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Schema.org Event (Wedding) - for Google rich results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Blessyn & Tolu Wedding",
+    "description": "Join Blessyn and Tolu as they celebrate their wedding on April 10-11, 2026 in Lagos, Nigeria. Traditional and white wedding ceremonies.",
+    "image": "https://blessyn-tolu-wedding.com/BT.jpeg",
+    "url": "https://blessyn-tolu-wedding.com",
+    "startDate": "2026-04-10T12:00:00+01:00",
+    "endDate": "2026-04-11T15:00:00+01:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": [
+      {
+        "@type": "Place",
+        "name": "Bride's Father's Compound",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "12 Rabiu Saka Crescent, Off Ojuemerum Road, Egirin, Odogunyan",
+          "addressLocality": "Ikorodu",
+          "addressRegion": "Lagos",
+          "addressCountry": "NG"
+        }
+      },
+      {
+        "@type": "Place",
+        "name": "Peakstone Event Centre",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Haruna Bus Stop",
+          "addressLocality": "Ikorodu",
+          "addressRegion": "Lagos",
+          "addressCountry": "NG"
+        }
+      }
+    ],
+    "organizer": {
+      "@type": "Person",
+      "name": "Blessyn & Tolu"
+    },
+    "keywords": "Blessyn Tolu wedding, Lagos Nigeria wedding, traditional wedding, white wedding, April 2026"
+  }
+  </script>
+
+  <!-- Schema.org WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Blessyn & Tolu Wedding",
+    "url": "https://blessyn-tolu-wedding.com",
+    "description": "Blessyn and Tolu's wedding celebration - April 10-11, 2026 in Lagos, Nigeria. #BeautifulinhisTime #TolusBlessyn26"
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"></noscript>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/favicon.svg">
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
+    body { font-family: 'Inter', system-ui, sans-serif; margin: 0; }
+    h1, h2, h3, h4, .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+
+    /* Critical hero CSS - ensures LCP content paints before React/JS */
+    #hero-static {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #1e3a5f;
     }
-    h1, h2, h3, h4, .font-serif {
-      font-family: 'Playfair Display', serif;
+    #hero-static img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    #hero-static .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+    #hero-static .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 1rem;
+      max-width: 56rem;
+    }
+    #hero-static .hero-h1 {
+      color: white;
+      font-size: clamp(3rem, 12vw, 8rem);
+      font-weight: 700;
+      margin: 0 0 0.5rem;
+      line-height: 1.1;
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    #hero-static .hero-sub {
+      color: rgba(255,255,255,0.9);
+      font-size: clamp(1rem, 3vw, 1.875rem);
+      font-style: italic;
+      letter-spacing: 0.3em;
+      font-family: 'Playfair Display', Georgia, serif;
     }
   </style>
-<script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
 </head>
 <body class="bg-white text-gray-900">
-  <div id="root"></div>
-<script type="module" src="/index.tsx"></script>
+  <div id="root">
+    <!-- Static hero: paints immediately for fast LCP, replaced when React mounts -->
+    <section id="hero-static" aria-label="Hero">
+      <img src="/BT.jpeg" alt="Blessyn and Tolu - Wedding" fetchpriority="high" decoding="async" width="1920" height="1080">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <h1 class="hero-h1">Blessyn <em>&</em> Tolu</h1>
+        <p class="hero-sub">are getting married</p>
+        <p class="hero-sub" style="margin-top:1rem;font-size:clamp(1.125rem,2.5vw,1.5rem)">April 10 & 11, 2026 · Lagos, Nigeria</p>
+      </div>
+    </section>
+  </div>
+  <script type="module" src="/index.tsx"></script>
 </body>
 </html>
