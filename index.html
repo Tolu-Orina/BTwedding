@@ -107,8 +107,8 @@
     body { font-family: 'Inter', system-ui, sans-serif; margin: 0; }
     h1, h2, h3, h4, .font-serif { font-family: 'Playfair Display', Georgia, serif; }
 
-    /* Critical hero CSS - ensures LCP content paints before React/JS */
-    #hero-static {
+    /* Critical hero CSS - paints before any JS. Hero is outside #root, never replaced. */
+    .hero-static {
       position: relative;
       min-height: 100vh;
       display: flex;
@@ -117,7 +117,7 @@
       overflow: hidden;
       background: #1e3a5f;
     }
-    #hero-static img {
+    .hero-static img {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -125,48 +125,84 @@
       object-fit: cover;
       object-position: center;
     }
-    #hero-static .hero-overlay {
+    .hero-static .hero-overlay {
       position: absolute;
       inset: 0;
       background: rgba(0,0,0,0.45);
     }
-    #hero-static .hero-content {
+    .hero-static .hero-content {
       position: relative;
       z-index: 2;
       text-align: center;
       padding: 1rem;
       max-width: 56rem;
     }
-    #hero-static .hero-h1 {
+    .hero-static .hero-h1 {
       color: white;
-      font-size: clamp(3rem, 12vw, 8rem);
+      font-size: clamp(3rem, 8vw, 8rem);
       font-weight: 700;
       margin: 0 0 0.5rem;
+      opacity: 0.8;
       line-height: 1.1;
       font-family: 'Playfair Display', Georgia, serif;
     }
-    #hero-static .hero-sub {
+    .hero-static .hero-sub {
       color: rgba(255,255,255,0.9);
       font-size: clamp(1rem, 3vw, 1.875rem);
       font-style: italic;
       letter-spacing: 0.3em;
       font-family: 'Playfair Display', Georgia, serif;
     }
+    .hero-static .hero-date { margin-top: 1rem; font-size: clamp(1.125rem, 2.5vw, 1.5rem); }
+    .hero-static .hero-hashtags {
+      color: white;
+      font-size: clamp(0.875rem, 2vw, 1.125rem);
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      margin: 0 0 1.5rem;
+    }
+    .hero-static .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: rgba(255,255,255,0.6);
+    }
+    .hero-static .hero-scroll-text {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .hero-static .hero-scroll-bar {
+      width: 1px;
+      height: 3rem;
+      background: rgba(255,255,255,0.3);
+    }
   </style>
 </head>
 <body class="bg-white text-gray-900">
-  <div id="root">
-    <!-- Static hero: paints immediately for fast LCP, replaced when React mounts -->
-    <section id="hero-static" aria-label="Hero">
-      <img src="/BT.jpeg" alt="Blessyn and Tolu - Wedding" fetchpriority="high" decoding="async" width="1920" height="1080">
-      <div class="hero-overlay" aria-hidden="true"></div>
-      <div class="hero-content">
-        <h1 class="hero-h1">Blessyn <em>&</em> Tolu</h1>
-        <p class="hero-sub">are getting married</p>
-        <p class="hero-sub" style="margin-top:1rem;font-size:clamp(1.125rem,2.5vw,1.5rem)">April 10 & 11, 2026 · Lagos, Nigeria</p>
-      </div>
-    </section>
-  </div>
+  <!-- Static hero: OUTSIDE root so React never replaces it. LCP stays fast. -->
+  <section id="home" aria-label="Hero" class="hero-static">
+    <img src="/BT.jpeg" alt="Blessyn and Tolu - Wedding" fetchpriority="high" decoding="async" width="1920" height="1080">
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-hashtags">#BeautifulinhisTime <span style="margin:0 0.5rem">|</span> #Tolu'sBlessyn26</p>
+      <h1 class="hero-h1">Blessyn <em>&</em> Tolu</h1>
+      <p class="hero-sub">are getting married</p>
+      <p class="hero-sub hero-date" style="margin-bottom: 1rem;">April 10 & 11, 2026 · Lagos, Nigeria</p>
+      <div id="hero-dynamic"></div>
+    </div>
+    <div class="hero-scroll">
+      <span class="hero-scroll-text">Scroll</span>
+      <div class="hero-scroll-bar"></div>
+    </div>
+  </section>
+
+  <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>
 </html>

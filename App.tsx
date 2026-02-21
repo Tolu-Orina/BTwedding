@@ -32,9 +32,10 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen selection:bg-rose-100 selection:text-rose-900">
       <Navbar />
-      
+
+      <Hero />
+
       <main>
-        <Hero />
         <Suspense fallback={<div className="min-h-[200px]" aria-busy="true" />}>
           <Story />
           <Details />
