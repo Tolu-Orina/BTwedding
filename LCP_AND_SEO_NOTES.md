@@ -50,7 +50,7 @@ Tools: [Squoosh](https://squoosh.app), [TinyPNG](https://tinypng.com).
 ## SEO – Applied Fixes
 
 ### Meta & Social
-- **OG/Twitter image:** Absolute URL `https://blessyn-tolu-wedding.com/BT.jpeg` (required by crawlers).
+- **OG/Twitter image:** Absolute URL `https://btwedding.conquerorfoundation.com/BT.jpeg` (required by crawlers).
 - **og:image:alt** and **twitter:image:alt** for accessibility.
 - **og:locale** set to `en_US`.
 - **geo.region** `NG-LA` for Lagos.
@@ -65,7 +65,7 @@ Tools: [Squoosh](https://squoosh.app), [TinyPNG](https://tinypng.com).
 - **sitemap.xml:** Lists the main URL for indexing.
 
 ### Next Steps for Google
-1. **Google Search Console:** Add property `https://blessyn-tolu-wedding.com`, verify ownership.
-2. **Submit sitemap:** Sitemap URL: `https://blessyn-tolu-wedding.com/sitemap.xml`
+1. **Google Search Console:** Add property `https://btwedding.conquerorfoundation.com`, verify ownership.
+2. **Submit sitemap:** Sitemap URL: `https://btwedding.conquerorfoundation.com/sitemap.xml`
 3. **Request indexing** for the homepage.
 4. Wait 1–2 weeks for indexing; rankings may take longer.
