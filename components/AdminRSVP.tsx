@@ -148,8 +148,7 @@ const AdminRSVP: React.FC = () => {
 
       <div className="max-w-6xl mx-auto px-6 py-10">
         <p className="text-sm text-slate-600 mb-6">
-          Admin only. Set <code className="bg-slate-100 px-1 rounded">ADMIN_TOKEN</code> on the Lambda and deploy.
-          Use the same Function URL as RSVP submissions.
+          Admin only. View RSVPs submitted by guests.
         </p>
 
         <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm space-y-4 max-w-xl">
