@@ -1,5 +1,5 @@
-
 import React, { useState } from 'react';
+import { RSVP_API_URL } from '../constants';
 
 const RSVP: React.FC = () => {
   const [step, setStep] = useState<'auth' | 'form' | 'success'>('auth');
@@ -30,11 +30,10 @@ const RSVP: React.FC = () => {
     e.preventDefault();
     
     try {
-      const response = await fetch('https://m5de2ayxhjzoyfxob7t3xbxlza0zwtjl.lambda-url.us-east-1.on.aws/', {
+      const response = await fetch(RSVP_API_URL.replace(/\/?$/, '/'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
         },
         body: JSON.stringify({
           name: inviteCode,

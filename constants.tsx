@@ -1,5 +1,10 @@
-
 import { FAQItem, WeddingPartyMember, GalleryItem } from './types';
+
+/** Same Lambda Function URL for POST (RSVP) and GET (admin list). */
+export const RSVP_API_URL =
+  import.meta.env.VITE_RSVP_API_URL ??
+  'https://m5de2ayxhjzoyfxob7t3xbxlza0zwtjl.lambda-url.us-east-1.on.aws/';
+
 
 export const COLORS = {
   primary: '#FFFFFF',

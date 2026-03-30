@@ -1,4 +1,4 @@
-import React, { useEffect, Suspense, lazy } from 'react';
+import React, { useEffect, Suspense, lazy, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 
@@ -8,26 +8,35 @@ const Gallery = lazy(() => import('./components/Gallery'));
 const RSVP = lazy(() => import('./components/RSVP'));
 const FAQ = lazy(() => import('./components/FAQ'));
 const Footer = lazy(() => import('./components/Footer'));
+const AdminRSVP = lazy(() => import('./components/AdminRSVP'));
 
 const App: React.FC = () => {
+  const [hash, setHash] = useState(() => window.location.hash);
+
   useEffect(() => {
-    // Smooth scroll handling for hash links
-    const handleHashChange = () => {
-      const hash = window.location.hash;
-      if (hash) {
-        const element = document.querySelector(hash);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    };
-
-    window.addEventListener('hashchange', handleHashChange);
-    // Initial check
-    handleHashChange();
-
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    const sync = () => setHash(window.location.hash);
+    window.addEventListener('hashchange', sync);
+    return () => window.removeEventListener('hashchange', sync);
   }, []);
+
+  useEffect(() => {
+    if (hash === '#admin') return;
+    const h = window.location.hash;
+    if (h && h !== '#') {
+      const element = document.querySelector(h);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [hash]);
+
+  if (hash === '#admin') {
+    return (
+      <Suspense fallback={<div className="min-h-screen bg-slate-50 flex items-center justify-center">Loading…</div>}>
+        <AdminRSVP />
+      </Suspense>
+    );
+  }
 
   return (
     <div className="min-h-screen selection:bg-rose-100 selection:text-rose-900">
